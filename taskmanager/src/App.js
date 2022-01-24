@@ -1,9 +1,29 @@
 import "./App.css";
+import Input from "./Components/Input/Input";
+import Tasks from "./Components/Tasks/Tasks";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [tasksList, setTaskList] = useState();
+  const [tasksListTasks, setTaskListTasks] = useState([]);
+
+  useEffect(() => {
+    if (!tasksList) {
+      return;
+    }
+
+    setTaskListTasks([...tasksListTasks, tasksList]);
+  }, [tasksList]);
+
+  const removeTasksHandler = (value) => {
+    const newTasksList = tasksListTasks.filter((el) => el.inputValue !== value);
+    setTaskListTasks(newTasksList);
+  };
+
   return (
     <div className="App">
-      <p>working</p>
+      <Input setTaskList={setTaskList} />
+      <Tasks tasksList={tasksListTasks} removeTask={removeTasksHandler} />
     </div>
   );
 }
