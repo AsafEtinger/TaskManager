@@ -1,8 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import classes from "./Input.module.css";
+
+// const backgroundChangingOnScroll = (y) => {
+//   y >= 100 ? `container yes` : "container";
+// };
+
 const Input = ({ setTaskList }) => {
   const [inputValue, setInputValue] = useState("");
   const [textAreaValue, setTextAreaValue] = useState("");
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -22,6 +28,29 @@ const Input = ({ setTaskList }) => {
     setTextAreaValue(e.target.value);
   };
 
+  // const handleScroll = () => {
+  //   const position = window.pageYOffset;
+  //   setScrollPosition(position);
+  // };
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll, { passive: true });
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
+
+  // const navBarBackgroundClass = () => {
+  //   if (scrollPosition > 100) {
+  //     return "containerWhite";
+  //   } else {
+  //     return "container";
+  //   }
+  // };
+
+  // const cssClass = navBarBackgroundClass();
+  // console.log(cssClass);
   return (
     <form onSubmit={submitHandler} className={classes.container}>
       <div className={classes.inputAndBtnContainer}>
@@ -34,13 +63,14 @@ const Input = ({ setTaskList }) => {
         ></input>
         <button className={classes.btn}>Task it</button>
       </div>
-
-      <textarea
-        className={classes.textarea}
-        onChange={textAreaValueHandler}
-        placeholder="Task description"
-        value={textAreaValue}
-      ></textarea>
+      <div className={classes.wrapper}>
+        <textarea
+          className={classes.textarea}
+          onChange={textAreaValueHandler}
+          placeholder="Task description"
+          value={textAreaValue}
+        ></textarea>
+      </div>
     </form>
   );
 };

@@ -1,4 +1,4 @@
-import "./App.css";
+import classes from "./App.module.css";
 import Input from "./Components/Input/Input";
 import Tasks from "./Components/Tasks/Tasks";
 import { useEffect, useState } from "react";
@@ -21,8 +21,8 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Input setTaskList={setTaskList} />
+    <div className={classes.App}>
+      <Input setTaskList={setTaskList} className={classes.input} />
       <Tasks tasksList={tasksListTasks} removeTask={removeTasksHandler} />
     </div>
   );

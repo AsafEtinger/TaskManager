@@ -1,7 +1,20 @@
 .container {
   width: 95%;
   margin: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
 }
+
+/* .containerWhite {
+  width: 95%;
+  margin: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  background-color: white;
+  height: auto;
+} */
 
 .inputAndBtnContainer {
   margin-top: 1em;
@@ -14,6 +27,9 @@
   border: none;
   border-radius: 10px;
   text-align: center;
+}
+.wrapper {
+  width: 100%;
 }
 
 .textarea {
