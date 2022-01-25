@@ -16,6 +16,7 @@ function App() {
   }, [tasksList]);
 
   const removeTasksHandler = (value) => {
+    
     const newTasksList = tasksListTasks.filter((el) => el.inputValue !== value);
     setTaskListTasks(newTasksList);
   };

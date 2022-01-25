@@ -9,20 +9,21 @@ const Tasks = ({ tasksList, removeTask }) => {
 
   const tasksListDisplay = tasks.map((task) => {
     return (
-      <div key={task.inputValue} className={classes.container}>
+      <li key={task.inputValue} className={classes.container}>
         <div className={classes.taskInfo}>
           <h4 className={classes.taskHeader}>{task.inputValue}</h4>
           <h6 className={classes.taskBody}>{task.textAreaValue}</h6>
         </div>
 
-        <button className={classes.btn}
+        <button
+          className={classes.btn}
           onClick={() => {
             removeTask(task.inputValue);
           }}
         >
           Done
         </button>
-      </div>
+      </li>
     );
   });
 

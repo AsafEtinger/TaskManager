@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import classes from "./Input.module.css";
-
-// const backgroundChangingOnScroll = (y) => {
-//   y >= 100 ? `container yes` : "container";
-// };
-
+import "./Input.module.css";
 const Input = ({ setTaskList }) => {
   const [inputValue, setInputValue] = useState("");
   const [textAreaValue, setTextAreaValue] = useState("");
@@ -15,7 +11,10 @@ const Input = ({ setTaskList }) => {
     if (inputValue.length < 2) {
       return;
     }
-    setTaskList({ inputValue: inputValue, textAreaValue: textAreaValue });
+    setTaskList({
+      inputValue: inputValue,
+      textAreaValue: textAreaValue,
+    });
     setInputValue("");
     setTextAreaValue("");
   };
@@ -41,8 +40,10 @@ const Input = ({ setTaskList }) => {
   //   };
   // }, []);
 
+  // console.log(scrollPosition, "scrollPosition");
+
   // const navBarBackgroundClass = () => {
-  //   if (scrollPosition > 100) {
+  //   if (scrollPosition > 10) {
   //     return "containerWhite";
   //   } else {
   //     return "container";
