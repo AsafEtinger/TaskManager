@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import classes from "./Input.module.css";
 import "./Input.module.css";
 const Input = ({ setTaskList }) => {
   const [inputValue, setInputValue] = useState("");
   const [textAreaValue, setTextAreaValue] = useState("");
-  const [scrollPosition, setScrollPosition] = useState(0);
 
   const submitHandler = (e) => {
     e.preventDefault();
