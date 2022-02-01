@@ -1,19 +1,11 @@
 .container {
   width: 95%;
   margin: auto;
-  position: -webkit-sticky;
-  position: sticky;
+  
   top: 0px;
 }
 
-.containerWhite {
-  width: 95%;
-  margin: auto;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0px;
-  background-color: white;
-}
+
 
 .inputAndBtnContainer {
   margin-top: 1em;

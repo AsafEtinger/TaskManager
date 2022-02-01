@@ -27,31 +27,6 @@ const Input = ({ setTaskList }) => {
     setTextAreaValue(e.target.value);
   };
 
-  // const handleScroll = () => {
-  //   const position = window.pageYOffset;
-  //   setScrollPosition(position);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll, { passive: true });
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
-  // console.log(scrollPosition, "scrollPosition");
-
-  // const navBarBackgroundClass = () => {
-  //   if (scrollPosition > 10) {
-  //     return "containerWhite";
-  //   } else {
-  //     return "container";
-  //   }
-  // };
-
-  // const cssClass = navBarBackgroundClass();
-  // console.log(cssClass);
   return (
     <form onSubmit={submitHandler} className={classes.container}>
       <div className={classes.inputAndBtnContainer}>
